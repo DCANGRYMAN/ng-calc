@@ -1,0 +1,126 @@
+// Dracula palette
+$bg: #282a36;
+$bg-light: #343746;
+$fg: #f8f8f2;
+$comment: #6272a4;
+$purple: #bd93f9;
+$pink: #ff79c6;
+$green: #50fa7b;
+$red: #ff5555;
+
+* {
+  box-sizing: border-box;
+}
+
+.credit-container {
+  min-height: 100vh;
+  padding: 24px;
+  background: linear-gradient(180deg, $bg, darken($bg, 4%));
+  color: $fg;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: $purple;
+}
+
+.credit-form {
+  background: $bg-light;
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 0.85rem;
+    color: $comment;
+  }
+
+  input {
+    background: $bg;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    color: $fg;
+    outline: none;
+    transition: all 0.2s ease;
+
+    &::placeholder {
+      color: lighten($comment, 5%);
+    }
+
+    &:focus {
+      border-color: $purple;
+      box-shadow: 0 0 0 2px rgba($purple, 0.2);
+    }
+  }
+}
+
+.btn-primary {
+  margin-top: 8px;
+  padding: 16px;
+  border-radius: 14px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: $bg;
+  background: linear-gradient(135deg, $pink, $purple);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba($purple, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}
+
+.result {
+  background: rgba($green, 0.08);
+  border: 1px solid rgba($green, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+
+  h2 {
+    margin-bottom: 12px;
+    color: $green;
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+}
+
+/* Tablet+ */
+@media (min-width: 768px) {
+  .credit-container {
+    align-items: center;
+  }
+
+  .credit-form,
+  .result {
+    min-width: 420px;
+  }
+}
