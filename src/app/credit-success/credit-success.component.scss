@@ -1,0 +1,106 @@
+// Dracula palette
+$bg: #282a36;
+$bg-light: #343746;
+$fg: #f8f8f2;
+$comment: #6272a4;
+$green: #50fa7b;
+$purple: #bd93f9;
+$pink: #ff79c6;
+
+.success-container {
+  min-height: 100vh;
+  padding: 24px;
+  background: linear-gradient(180deg, $bg, darken($bg, 4%));
+  color: $fg;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.icon-wrapper {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: rgba($green, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pop 0.4s ease-out;
+
+  svg {
+    width: 48px;
+    height: 48px;
+    fill: $green;
+  }
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: $green;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: $comment;
+}
+
+.limit-box {
+  margin: 16px 0;
+  padding: 20px;
+  width: 100%;
+  max-width: 320px;
+  background: $bg-light;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  span {
+    display: block;
+    font-size: 0.8rem;
+    color: $comment;
+    margin-bottom: 6px;
+  }
+
+  strong {
+    font-size: 1.6rem;
+    color: $purple;
+  }
+}
+
+.btn-primary {
+  margin-top: 8px;
+  padding: 16px 24px;
+  border-radius: 14px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: $bg;
+  background: linear-gradient(135deg, $pink, $purple);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba($purple, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

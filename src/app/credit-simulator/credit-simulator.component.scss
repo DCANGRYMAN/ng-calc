@@ -121,6 +121,132 @@ h1 {
 
   .credit-form,
   .result {
-    min-width: 420px;
+    width: 420px;
   }
 }
+
+// Dracula palette
+$bg: #282a36;
+$bg-light: #343746;
+$fg: #f8f8f2;
+$comment: #6272a4;
+$purple: #bd93f9;
+$pink: #ff79c6;
+$green: #50fa7b;
+$red: #ff5555;
+
+// Fonte melhor (fintech / produto real)
+.credit-container {
+  min-height: 100vh;
+  padding: 24px;
+  background: linear-gradient(180deg, $bg, darken($bg, 4%));
+  color: $fg;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: $purple;
+}
+
+.credit-form {
+  background: $bg-light;
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 0.85rem;
+    color: $comment;
+  }
+
+  input {
+    background: $bg;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    color: $fg;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &::placeholder {
+      color: lighten($comment, 5%);
+    }
+
+    &:focus {
+      border-color: $purple;
+      box-shadow: 0 0 0 2px rgba($purple, 0.2);
+    }
+
+    &.invalid {
+      border-color: $red;
+      box-shadow: 0 0 0 2px rgba($red, 0.25);
+    }
+  }
+
+  small {
+    font-size: 0.75rem;
+    color: $red;
+    margin-top: 2px;
+  }
+}
+
+.btn-primary {
+  margin-top: 8px;
+  padding: 16px;
+  border-radius: 14px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: $bg;
+  background: linear-gradient(135deg, $pink, $purple);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba($purple, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.loader {
+  width: 22px;
+  height: 22px;
+  border: 3px solid rgba(40, 42, 54, 0.3);
+  border-top-color: #f8f8f2;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
